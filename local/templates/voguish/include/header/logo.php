@@ -1,0 +1,1 @@
+<img src="/local/templates/voguish/layout/images/logo.png" class="img-responsive" alt="logo">
