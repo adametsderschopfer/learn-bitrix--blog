@@ -71,29 +71,5 @@ $this->setFrameMode(true);
             ),
             $component
         ); ?>
-
-        <?php if ($arParams["USE_REVIEW"] == "Y" && IsModuleInstalled("forum") && $ElementID): ?>
-            <hr/>
-            <?php $APPLICATION->IncludeComponent(
-                "bitrix:forum.topic.reviews",
-                "",
-                array(
-                    "CACHE_TYPE" => $arParams["CACHE_TYPE"],
-                    "CACHE_TIME" => $arParams["CACHE_TIME"],
-                    "MESSAGES_PER_PAGE" => $arParams["MESSAGES_PER_PAGE"],
-                    "USE_CAPTCHA" => $arParams["USE_CAPTCHA"],
-                    "PATH_TO_SMILE" => $arParams["PATH_TO_SMILE"],
-                    "FORUM_ID" => $arParams["FORUM_ID"],
-                    "URL_TEMPLATES_READ" => $arParams["URL_TEMPLATES_READ"],
-                    "SHOW_LINK_TO_FORUM" => $arParams["SHOW_LINK_TO_FORUM"],
-                    "DATE_TIME_FORMAT" => $arParams["DETAIL_ACTIVE_DATE_FORMAT"],
-                    "ELEMENT_ID" => $ElementID,
-                    "AJAX_POST" => $arParams["REVIEW_AJAX_POST"],
-                    "IBLOCK_ID" => $arParams["IBLOCK_ID"],
-                    "URL_TEMPLATES_DETAIL" => $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["detail"],
-                ),
-                $component
-            ); ?>
-        <?php endif ?>
     </div>
 </div>
