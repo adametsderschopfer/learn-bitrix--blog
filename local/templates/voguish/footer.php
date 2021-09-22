@@ -6,7 +6,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 global $APPLICATION;
 ?>
 
-<?php if(ERROR_404 !== "Y"): ?>
+<?php if (ERROR_404 !== "Y"): ?>
     </div>
     <div class="col-md-3 bann-left">
         <div class="b-search">
@@ -20,7 +20,8 @@ global $APPLICATION;
         <div class="blo-top">
             <div class="blog-grids">
                 <div class="blog-grid-left">
-                    <a href="single.html"><img src="<?= SITE_TEMPLATE_PATH ?>/layout/images/1b.jpg" class="img-responsive" alt=""></a>
+                    <a href="single.html"><img src="<?= SITE_TEMPLATE_DEFAULT ?>/layout/images/1b.jpg"
+                                               class="img-responsive" alt=""></a>
                 </div>
                 <div class="blog-grid-right">
                     <h4><a href="single.html">Little Invaders </a></h4>
@@ -30,7 +31,8 @@ global $APPLICATION;
             </div>
             <div class="blog-grids">
                 <div class="blog-grid-left">
-                    <a href="single.html"><img src="<?= SITE_TEMPLATE_PATH ?>/layout/images/2b.jpg" class="img-responsive" alt=""></a>
+                    <a href="single.html"><img src="<?= SITE_TEMPLATE_DEFAULT ?>/layout/images/2b.jpg"
+                                               class="img-responsive" alt=""></a>
                 </div>
                 <div class="blog-grid-right">
                     <h4><a href="single.html">Little Invaders </a></h4>
@@ -40,7 +42,7 @@ global $APPLICATION;
             </div>
             <div class="blog-grids">
                 <div class="blog-grid-left">
-                    <a href=""><img src="<?= SITE_TEMPLATE_PATH ?>/layout/images/3b.jpg" class="img-responsive" alt=""></a>
+                    <a href=""><img src="<?= SITE_TEMPLATE_DEFAULT ?>/layout/images/3b.jpg" class="img-responsive" alt=""></a>
                 </div>
                 <div class="blog-grid-right">
                     <h4><a href="single.html">Little Invaders </a></h4>
@@ -75,84 +77,86 @@ global $APPLICATION;
         </div>
     </div>
 
-    <div class="clearfix"></div>
-
-    <div class="fle-xsel">
-        <ul id="flexiselDemo3">
-            <li>
-                <a href="#">
-                    <div class="banner-1">
-                        <img src="<?= SITE_TEMPLATE_PATH ?>/layout/images/6.jpg" class="img-responsive" alt="">
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="banner-1">
-                        <img src="<?= SITE_TEMPLATE_PATH ?>/layout/images/5.jpg" class="img-responsive" alt="">
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="banner-1">
-                        <img src="<?= SITE_TEMPLATE_PATH ?>/layout/images/1.jpg" class="img-responsive" alt="">
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="banner-1">
-                        <img src="<?= SITE_TEMPLATE_PATH ?>/layout/images/4.jpg" class="img-responsive" alt="">
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="banner-1">
-                        <img src="<?= SITE_TEMPLATE_PATH ?>/layout/images/6.jpg" class="img-responsive" alt="">
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="banner-1">
-                        <img src="<?= SITE_TEMPLATE_PATH ?>/layout/images/1.jpg" class="img-responsive" alt="">
-                    </div>
-                </a>
-            </li>
-        </ul>
-
-        <script type="text/javascript">
-            $(window).load(function () {
-
-                $("#flexiselDemo3").flexisel({
-                    visibleItems: 5,
-                    animationSpeed: 1000,
-                    autoPlay: true,
-                    autoPlaySpeed: 3000,
-                    pauseOnHover: true,
-                    enableResponsiveBreakpoints: true,
-                    responsiveBreakpoints: {
-                        portrait: {
-                            changePoint: 480,
-                            visibleItems: 2
-                        },
-                        landscape: {
-                            changePoint: 640,
-                            visibleItems: 3
-                        },
-                        tablet: {
-                            changePoint: 768,
-                            visibleItems: 3
-                        }
-                    }
-                });
-
-            });
-        </script>
+    <?php if ($APPLICATION->GetProperty('INDEX_PAGE') == "Y"): ?>
         <div class="clearfix"></div>
-    </div>
+        <div class="fle-xsel">
+            <ul id="flexiselDemo3">
+                <li>
+                    <a href="#">
+                        <div class="banner-1">
+                            <img src="<?= SITE_TEMPLATE_DEFAULT ?>/layout/images/6.jpg" class="img-responsive" alt="">
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="banner-1">
+                            <img src="<?= SITE_TEMPLATE_DEFAULT ?>/layout/images/5.jpg" class="img-responsive" alt="">
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="banner-1">
+                            <img src="<?= SITE_TEMPLATE_DEFAULT ?>/layout/images/1.jpg" class="img-responsive" alt="">
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="banner-1">
+                            <img src="<?= SITE_TEMPLATE_DEFAULT ?>/layout/images/4.jpg" class="img-responsive" alt="">
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="banner-1">
+                            <img src="<?= SITE_TEMPLATE_DEFAULT ?>/layout/images/6.jpg" class="img-responsive" alt="">
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="banner-1">
+                            <img src="<?= SITE_TEMPLATE_DEFAULT ?>/layout/images/1.jpg" class="img-responsive" alt="">
+                        </div>
+                    </a>
+                </li>
+            </ul>
+
+            <script type="text/javascript">
+                $(window).load(function () {
+
+                    $("#flexiselDemo3").flexisel({
+                        visibleItems: 5,
+                        animationSpeed: 1000,
+                        autoPlay: true,
+                        autoPlaySpeed: 3000,
+                        pauseOnHover: true,
+                        enableResponsiveBreakpoints: true,
+                        responsiveBreakpoints: {
+                            portrait: {
+                                changePoint: 480,
+                                visibleItems: 2
+                            },
+                            landscape: {
+                                changePoint: 640,
+                                visibleItems: 3
+                            },
+                            tablet: {
+                                changePoint: 768,
+                                visibleItems: 3
+                            }
+                        }
+                    });
+
+                });
+            </script>
+            <div class="clearfix"></div>
+        </div>
+    <?php endif; ?>
+
 <?php endif; ?>
 
 <footer class="footer">
@@ -196,7 +200,7 @@ global $APPLICATION;
             ".default",
             [
                 "AREA_FILE_SHOW" => "file",
-                "PATH" => SITE_TEMPLATE_PATH . "/include/footer/copyrights.php",
+                "PATH" => SITE_TEMPLATE_DEFAULT . "/include/footer/copyrights.php",
                 "EDIT_TEMPLATE" => ""
             ], false) ?>
     </div>

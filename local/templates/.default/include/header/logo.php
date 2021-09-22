@@ -1,0 +1,1 @@
+<img src="/local/templates/.default/layout/images/logo.png" class="img-responsive" alt="logo">

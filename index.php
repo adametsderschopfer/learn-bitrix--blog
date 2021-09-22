@@ -2,6 +2,7 @@
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 global $APPLICATION;
 $APPLICATION->SetTitle("Главная");
+$APPLICATION->SetPageProperty("INDEX_PAGE", "Y");
 ?>
 
     <div class="banner">
@@ -51,7 +52,8 @@ $APPLICATION->SetTitle("Главная");
     <div class="nam-matis">
         <div class="nam-matis-top">
             <div class="col-md-6 nam-matis-1">
-                <a href="single.html"><img src="<?= SITE_TEMPLATE_PATH ?>/layout/images/5.jpg" class="img-responsive" alt=""></a>
+                <a href="single.html"><img src="<?= SITE_TEMPLATE_PATH ?>/layout/images/5.jpg" class="img-responsive"
+                                           alt=""></a>
                 <h3><a href="single.html">Suspendisse a pellentesque dui</a></h3>
                 <p>Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus
                     felis, malesuada ultricies. Curabitur et ligula.</p>
@@ -66,13 +68,15 @@ $APPLICATION->SetTitle("Главная");
         </div>
         <div class="nam-matis-top">
             <div class="col-md-6 nam-matis-1">
-                <a href="single.html"><img src="<?= SITE_TEMPLATE_PATH ?>/layout/images/4.jpg" class="img-responsive" alt=""></a>
+                <a href="single.html"><img src="<?= SITE_TEMPLATE_PATH ?>/layout/images/4.jpg" class="img-responsive"
+                                           alt=""></a>
                 <h3><a href="single.html">Suspendisse a pellentesque dui</a></h3>
                 <p>Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus
                     felis, malesuada ultricies. Curabitur et ligula.</p>
             </div>
             <div class="col-md-6 nam-matis-1">
-                <a href="single.html"><img src="<?= SITE_TEMPLATE_PATH ?>/layout/images/1.jpg" class="img-responsive" alt=""></a>
+                <a href="single.html"><img src="<?= SITE_TEMPLATE_PATH ?>/layout/images/1.jpg" class="img-responsive"
+                                           alt=""></a>
                 <h3><a href="single.html">Suspendisse a pellentesque dui</a></h3>
                 <p>Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus
                     felis, malesuada ultricies. Curabitur et ligula.</p>
