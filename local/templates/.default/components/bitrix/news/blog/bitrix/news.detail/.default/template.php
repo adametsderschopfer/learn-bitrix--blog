@@ -13,6 +13,8 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+
+$commentsCount = $arResult["PROPERTIES"]["BLOG_COMMENTS_CNT"]["VALUE"];
 ?>
 
 
@@ -41,8 +43,7 @@ $this->setFrameMode(true);
         <li><a href="javascript:void(0)"><small
                         class="admin"> </small><span><?= $arResult["DISPLAY_PROPERTIES"]["AUTHOR"]["VALUE"] ?? "Administrator" ?></span></a>
         </li>
-        <li><a href="javascript:void(0)"><small class="no"> </small><span>No comments</span></a></li>
-        <li><a href="javascript:void(0)"><small
-                        class="posts"> </small><span>View posts: <?= $arResult["SHOW_COUNTER"] ?: 0 ?></span></a></li>
+        <li><a href="javascript:void(0)"><small class="no"> </small><span><?= $commentsCount ? $commentsCount . ' Comments' : "No comments" ?></span></a></li>
+        <li><a href="javascript:void(0)"><small class="posts"> </small><span>View posts: <?= $arResult["SHOW_COUNTER"] ?: 0 ?></span></a></li>
     </ul>
 </div>

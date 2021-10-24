@@ -9,57 +9,116 @@ global $APPLICATION;
 <?php if (ERROR_404 !== "Y"): ?>
     </div>
     <div class="col-md-3 bann-left">
-        <div class="b-search">
-            <form>
-                <input type="text" value="Search" onfocus="this.value = '';"
-                       onblur="if (this.value == '') {this.value = 'Search';}">
-                <input type="submit" value="">
-            </form>
-        </div>
-        <h3>Recent Posts</h3>
-        <div class="blo-top">
-            <div class="blog-grids">
-                <div class="blog-grid-left">
-                    <a href="single.html"><img src="<?= SITE_TEMPLATE_DEFAULT ?>/layout/images/1b.jpg"
-                                               class="img-responsive" alt=""></a>
-                </div>
-                <div class="blog-grid-right">
-                    <h4><a href="single.html">Little Invaders </a></h4>
-                    <p>pellentesque dui, non felis. Maecenas male </p>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="blog-grids">
-                <div class="blog-grid-left">
-                    <a href="single.html"><img src="<?= SITE_TEMPLATE_DEFAULT ?>/layout/images/2b.jpg"
-                                               class="img-responsive" alt=""></a>
-                </div>
-                <div class="blog-grid-right">
-                    <h4><a href="single.html">Little Invaders </a></h4>
-                    <p>pellentesque dui, non felis. Maecenas male </p>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="blog-grids">
-                <div class="blog-grid-left">
-                    <a href=""><img src="<?= SITE_TEMPLATE_DEFAULT ?>/layout/images/3b.jpg" class="img-responsive" alt=""></a>
-                </div>
-                <div class="blog-grid-right">
-                    <h4><a href="single.html">Little Invaders </a></h4>
-                    <p>pellentesque dui, non felis. Maecenas male </p>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-        <h3>Categories</h3>
-        <div class="blo-top">
-            <li><a href="#">|| Lorem Ipsum passage</a></li>
-            <li><a href="#">|| Finibus Bonorum et</a></li>
-            <li><a href="#">|| Treatise on the theory</a></li>
-            <li><a href="#">|| Characteristic words</a></li>
-            <li><a href="#">|| combined with a handful</a></li>
-            <li><a href="#">|| which looks reasonable</a></li>
-        </div>
+        <?php $APPLICATION->IncludeComponent(
+            "bitrix:search.form",
+            "sidebarSearch",
+            array(
+                "PAGE" => "#SITE_DIR#search/index.php",
+                "USE_SUGGEST" => "N",
+            ),
+            false
+        ); ?>
+
+        <?php
+        $APPLICATION->IncludeComponent(
+            "bitrix:news.list",
+            "sidebarRecentPosts",
+            array(
+                "COMPONENT_TEMPLATE" => "sidebarRecentPosts",
+                "IBLOCK_TYPE" => "content",
+                "IBLOCK_ID" => "3",
+                "NEWS_COUNT" => "3",
+                "SORT_BY1" => "ACTIVE_FROM",
+                "SORT_ORDER1" => "DESC",
+                "SORT_BY2" => "SORT",
+                "SORT_ORDER2" => "ASC",
+                "FILTER_NAME" => "",
+                "FIELD_CODE" => array(
+                    0 => "",
+                    1 => "",
+                ),
+                "PROPERTY_CODE" => array(
+                    0 => "",
+                    1 => "",
+                ),
+                "CHECK_DATES" => "Y",
+                "DETAIL_URL" => "",
+                "AJAX_MODE" => "N",
+                "AJAX_OPTION_JUMP" => "N",
+                "AJAX_OPTION_STYLE" => "N",
+                "AJAX_OPTION_HISTORY" => "N",
+                "AJAX_OPTION_ADDITIONAL" => "",
+                "CACHE_TYPE" => "A",
+                "CACHE_TIME" => "36000000",
+                "CACHE_FILTER" => "N",
+                "CACHE_GROUPS" => "Y",
+                "PREVIEW_TRUNCATE_LEN" => "",
+                "ACTIVE_DATE_FORMAT" => "d.m.Y",
+                "SET_TITLE" => "N",
+                "SET_BROWSER_TITLE" => "N",
+                "SET_META_KEYWORDS" => "N",
+                "SET_META_DESCRIPTION" => "N",
+                "SET_LAST_MODIFIED" => "N",
+                "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+                "ADD_SECTIONS_CHAIN" => "N",
+                "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+                "PARENT_SECTION" => "",
+                "PARENT_SECTION_CODE" => "",
+                "INCLUDE_SUBSECTIONS" => "Y",
+                "STRICT_SECTION_CHECK" => "N",
+                "DISPLAY_DATE" => "Y",
+                "DISPLAY_NAME" => "Y",
+                "DISPLAY_PICTURE" => "Y",
+                "DISPLAY_PREVIEW_TEXT" => "Y",
+                "PAGER_TEMPLATE" => ".default",
+                "DISPLAY_TOP_PAGER" => "N",
+                "DISPLAY_BOTTOM_PAGER" => "N",
+                "PAGER_TITLE" => "Новости",
+                "PAGER_SHOW_ALWAYS" => "N",
+                "PAGER_DESC_NUMBERING" => "N",
+                "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+                "PAGER_SHOW_ALL" => "N",
+                "PAGER_BASE_LINK_ENABLE" => "N",
+                "SET_STATUS_404" => "N",
+                "SHOW_404" => "N",
+                "MESSAGE_404" => ""
+            ),
+            false
+        ); ?>
+
+        <?php $APPLICATION->IncludeComponent(
+            "bitrix:catalog.section.list",
+            "sidebarCategoryList",
+            array(
+                "ADD_SECTIONS_CHAIN" => "Y",
+                "CACHE_FILTER" => "N",
+                "CACHE_GROUPS" => "Y",
+                "CACHE_TIME" => "36000000",
+                "CACHE_TYPE" => "A",
+                "COUNT_ELEMENTS" => "Y",
+                "COUNT_ELEMENTS_FILTER" => "CNT_ACTIVE",
+                "FILTER_NAME" => "sectionsFilter",
+                "IBLOCK_ID" => "3",
+                "IBLOCK_TYPE" => "content",
+                "SECTION_CODE" => "",
+                "SECTION_FIELDS" => array(
+                    0 => "",
+                    1 => "",
+                ),
+                "SECTION_ID" => $_REQUEST["SECTION_ID"],
+                "SECTION_URL" => "",
+                "SECTION_USER_FIELDS" => array(
+                    0 => "",
+                    1 => "",
+                ),
+                "SHOW_PARENT_NAME" => "Y",
+                "TOP_DEPTH" => "1",
+                "VIEW_MODE" => "LINE",
+                "COMPONENT_TEMPLATE" => "sidebarCategoryList"
+            ),
+            false
+        ); ?>
+
         <h3>Newsletter</h3>
 
         <div class="blo-top">

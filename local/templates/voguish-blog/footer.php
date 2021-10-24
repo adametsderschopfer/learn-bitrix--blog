@@ -8,12 +8,16 @@ global $APPLICATION;
 
 </div>
 <div class="blog-content-right">
-    <div class="b-search">
-        <form>
-            <input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
-            <input type="submit" value="">
-        </form>
-    </div>
+    <?php $APPLICATION->IncludeComponent(
+        "bitrix:search.form",
+        "sidebarSearch",
+        array(
+            "PAGE" => "#SITE_DIR#search/index.php",
+            "USE_SUGGEST" => "N",
+        ),
+        false
+    ); ?>
+
     <!--start-twitter-weight-->
     <div class="twitter-weights">
         <h3>Tweet Widget</h3>

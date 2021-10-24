@@ -30,6 +30,21 @@ $this->setFrameMode(true);
             CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"),
             array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM'))
         );
+
+        $commentsCount = $arItem["PROPERTIES"]["BLOG_COMMENTS_CNT"]["VALUE"];
+
+        $detailPicture = CFile::ResizeImageGet(
+            $arItem["PREVIEW_PICTURE"],
+            [
+                "width" => 795,
+                "height" => 500,
+            ],
+            BX_RESIZE_IMAGE_EXACT,
+            true
+        );
+
+        $arItem["PREVIEW_PICTURE"]['SRC'] = $detailPicture['src'];
+        unset($detailPicture);
         ?>
 
         <div class="blog-artical" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
@@ -77,7 +92,7 @@ $this->setFrameMode(true);
                                 <span><?= $AUTHOR ?></span>
                             </a>
                         </li>
-                        <li><a href="javascript:void(0)"><small class="no"></small><span>No comments</span></a></li>
+                        <li><a href="javascript:void(0)"><small class="no"></small><span><?= $commentsCount ? $commentsCount . ' Comments' : "No comments" ?></span></a></li>
                         <li><a href="javascript:void(0)"><small class="posts"></small><span>View posts: <?= $arItem["SHOW_COUNTER"] ?: 0 ?></span></a>
                         </li>
                     </ul>
