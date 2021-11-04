@@ -84,6 +84,6 @@ Asset::getInstance()->addString('<meta name="viewport" content="width=device-wid
 </header>
 
 <main class="container">
-    <?php if (ERROR_404 !== "Y"): ?>
+    <?php if (SHOW_SIDEBAR !== "N"): ?>
     <div class="col-md-9 bann-right">
         <?php endif; ?>
